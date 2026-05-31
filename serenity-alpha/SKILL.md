@@ -17,6 +17,15 @@ news -> observed demand change -> revenue/profit transmission -> small-cap elast
 
 Treat outputs as research hypotheses, not investment advice. Verify current prices, market caps, filings, earnings calls, and news from reliable sources before naming securities or making time-sensitive claims.
 
+## Answer Shape
+
+Start and end with the company that best fits the alpha hypothesis.
+
+- Open with a direct one-sentence call: `最值得优先验证的是：Company / ticker，原因是...`
+- If several names appear, choose a primary candidate and label others as alternatives or supply-chain comparables.
+- If no company is investable yet, say so at the top: `暂时没有足够明确的公司，先观察...`
+- Close by repeating the same primary company and the single validation condition that would confirm or kill the thesis.
+
 ## Workflow
 
 ### 1. Separate Talk From Demand
@@ -125,6 +134,9 @@ Frame position posture as conditional research guidance, not a personalized reco
 When analyzing a news item, use this structure:
 
 ```markdown
+## 结论先行：优先验证的公司
+点名最值得优先验证的一家公司 / ticker，并用一句话说明为什么它是本次新闻里最有弹性的候选。
+
 ## A. 表层新闻
 简述新闻表面信息。
 
@@ -151,6 +163,9 @@ When analyzing a news item, use this structure:
 
 ## I. 仓位建议
 给出观察、小仓、加仓、放弃的条件；避免承诺收益或给出个性化投资指令。
+
+## 最后一句
+再次点名这家公司，并给出最关键的财报验证条件；如果条件不成立，明确说应放弃或降级为观察。
 ```
 
 ## Quality Bar
