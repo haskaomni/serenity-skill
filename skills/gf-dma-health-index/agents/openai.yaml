@@ -1,0 +1,4 @@
+interface:
+  display_name: "GF-DMA Health Index"
+  short_description: "Score valuation health with GF-DMA"
+  default_prompt: "Use $gf-dma-health-index to score a ticker with latest fundamentals, DMA trend speed, price-DMA divergence, escape ratio, and estimate revisions."
