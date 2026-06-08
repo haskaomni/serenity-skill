@@ -109,14 +109,29 @@ Interpretation:
 | Signal | Status |
 | --- | --- |
 | 0%-5% above 20DMA | Healthy close-to-line trend |
-| 5%-12% above 20DMA | Strong trend |
-| 12%-20% above 20DMA | Hot |
-| >20% above 20DMA | Short-term escape |
+| 5%-12% above 20DMA | Strong trend, mild valuation stretch |
+| 12%-20% above 20DMA | Hot; divergence score should fall |
+| >20% above 20DMA | Short-term escape; divergence score should fall sharply |
 | >30% above 50DMA | Medium-term overheat |
 | >50% above 100DMA | Major repricing |
 | >100% above 200DMA | Extreme long-cycle repricing |
+| 0%-5% below 20/50DMA with stable fundamentals | Healthy pullback; divergence score can rise |
+| 5%-15% below 50DMA with stable/improving fundamentals | Better valuation entry, but verify trend damage separately |
+| Below 100/200DMA with deteriorating fundamentals | Trend damage; do not treat as cheap automatically |
 
-ATR divergence: `Z_x` of 0-2 is healthy, 2-3 hot, 3-4 very hot, >4 escape, and <0 means price is below that moving average.
+ATR divergence is asymmetric:
+
+| Z_x | Status |
+| ---: | --- |
+| 0 to 2 | Healthy |
+| 2 to 3 | Hot |
+| 3 to 4 | Very hot |
+| >4 | Escape; reduce divergence score sharply |
+| -1 to 0 with stable fundamentals | Mild pullback; can improve valuation-health score |
+| -3 to -1 with stable/improving fundamentals | Discounted pullback; score can be high, but check trend parallelism |
+| < -3 or below key long DMA with estimate cuts | Possible breakdown; score should fall |
+
+Important: `S_Divergence` is a valuation-health score, not a pure momentum score. Upward price-DMA divergence lowers the score because the stock is more stretched. Downward divergence raises the score only when fundamental speed and revision confirmation are stable or improving; if fundamentals are deteriorating, downward divergence is trend damage rather than an opportunity.
 
 ### 5. Trend Parallelism / Escape Ratio
 
@@ -149,6 +164,24 @@ Score estimate revisions:
 | Revisions starting to fall | 35-55 |
 | Guide below consensus; analysts cutting estimates | <35 |
 
+## Divergence Module Scoring
+
+Use asymmetric scoring for `S_Divergence`:
+
+| State | Score |
+| --- | ---: |
+| Price close to 20/50DMA, above 100/200DMA | 80-95 |
+| Stable/improving fundamentals; price below 20DMA but near 50DMA | 85-100 |
+| Stable/improving fundamentals; price 5%-15% below 50DMA while long DMAs remain healthy | 75-95 |
+| Price 5%-12% above 20DMA | 65-80 |
+| Price 12%-20% above 20DMA | 50-70 |
+| Price >20% above 20DMA or >30% above 50DMA | 25-55 |
+| Price below 50DMA with weakening fundamentals or estimate cuts | 35-60 |
+| Price below 100DMA with estimate cuts | 15-45 |
+| Price below 200DMA with fundamental deterioration | 0-30 |
+
+When price is below key DMAs, explicitly state whether the lower price is a healthy pullback or a breakdown. The deciding gate is fundamental speed plus revision confirmation.
+
 ## Final Scoring
 
 Calculate total score out of 100:
@@ -162,7 +195,7 @@ Module scoring:
 | Module | Weight |
 | --- | ---: |
 | Fundamental speed match | 40% |
-| Price-DMA divergence | 25% |
+| Price-DMA divergence / pullback opportunity | 25% |
 | Trend parallelism | 20% |
 | Revision confirmation | 15% |
 
