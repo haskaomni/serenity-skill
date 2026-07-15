@@ -1,4 +1,4 @@
 interface:
   display_name: "TAM-Adj-PEG"
   short_description: "Adjust PEG by TAM runway and quality"
-  default_prompt: "Use $tam-adj-peg to evaluate a ticker's valuation with forward PE, EPS CAGR, TAM runway factor, quality factor, and position-type framing."
+  default_prompt: "Use $tam-adj-peg to evaluate a ticker with forward PE, EPS CAGR, TAM runway, quality, position framing, and 2-4 adaptive Mermaid visualizations."

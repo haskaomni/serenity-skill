@@ -156,8 +156,29 @@ Use existing Serenity frameworks as lenses when they fit the company or user req
 - `bayesian-intrinsic-growth-valuation`: when the key question is whether intrinsic 3-5 year growth probability is above or below market-implied growth.
 - `tam-adj-peg`: when valuation depends on high growth, TAM runway, growth duration, and business quality rather than a simple PEG.
 - `gf-dma-health-index`: when the user asks whether the current trend or entry point is healthy, or when price/DMA/ATR and estimate-revision data are available.
+- `juglar-cycle-stock-stage`: when the thesis depends on industry capex, ASP, inventory, supply-demand, capacity release, customer order behavior, or migration across recovery, expansion, overheating, downturn, and clearing phases.
 
 Do not force every cross-check into every memo. Add only the modules that improve the investment decision.
+
+## Mermaid Visualizations
+
+For a full memo, include 2-4 Mermaid diagrams when they materially improve the investment decision. Prefer 3-4 for a deep memo, while a short or data-limited memo may use fewer. Do not create a diagram merely to meet a quota.
+
+Prioritize these views:
+
+1. A `flowchart` of the value chain, company position, pricing power, and profit pool.
+2. An `xychart-beta` for SOTP segment values or Bull/Base/Bear target prices when the values use the same currency and date basis.
+3. A `timeline` for the next 3-6 months of catalysts, with the catalyst table retained as the fallback.
+4. A compact `flowchart` connecting the core thesis, supporting evidence, variant perception, and thesis breakpoint.
+
+Apply these rules to every diagram:
+
+- Use fenced `mermaid` blocks, match the report language, keep node IDs in simple ASCII, and keep labels short.
+- Prefer broadly supported `flowchart`, `pie`, and `stateDiagram` syntax. Use `xychart-beta`, `quadrantChart`, or `timeline` only as progressive enhancement and retain the adjacent Markdown table as the fallback.
+- Use only evidence and values already stated in the memo. Keep currency, valuation date, units, scenario probabilities, and target prices consistent with the surrounding tables; never fill missing data for visual completeness.
+- Place each diagram beside the analysis it explains and follow it with a one-sentence investment takeaway. Keep citations, URLs, dates, and detailed caveats outside the diagram.
+- Keep a diagram focused: normally no more than 12 nodes or 8 plotted values. Diagrams supplement rather than replace analysis, valuation tables, risks, and source trails.
+- When a Serenity cross-check is used, import only the one diagram with the highest decision value. Do not repeat the same data in both the parent memo and a cross-check chart, and keep the whole memo within the 2-4 diagram budget.
 
 ## Output Template
 
@@ -191,6 +212,8 @@ Use this default structure:
 - Secular Drivers
 - Cyclical / Structural Risks
 
+Add a Mermaid value-chain flowchart here and state the profit-pool takeaway immediately after it.
+
 ## 3. Competitive Landscape
 - Key Competitors
 - Market Share Direction
@@ -217,12 +240,16 @@ Use this default structure:
 - Net Cash / Debt And Dilution Adjustment
 - Implied Equity Value And Target Price
 
+When segment values are comparable, add a Mermaid xychart and retain the SOTP table.
+
 ## 7. Bull / Base / Bear Scenarios
 | Scenario | Probability | Core Assumptions | Target Price | Implied Return |
 | --- | ---: | --- | ---: | ---: |
 | Bull | | | | |
 | Base | | | | |
 | Bear | | | | |
+
+When target prices share the same currency and valuation date, add a Mermaid xychart and retain this scenario table.
 
 ## 8. Variant Perception
 - Where Consensus May Be Wrong
@@ -234,6 +261,8 @@ Use this default structure:
 - Timing
 - Market Expectation
 - Tracking Metrics
+
+Add a Mermaid timeline when event windows are known; retain the catalyst table as the compatibility fallback.
 
 ## 10. Key Risks
 - Fundamental Risks
@@ -268,3 +297,5 @@ Use this default structure:
 ## Detailed Reference
 
 The original Chinese framework is stored in `references/original-framework.md`. Read it when you need the full source draft, exact prompt language, section-by-section checklist, or industry-specific driver examples.
+
+When the reference format differs, preserve its analytical intent but follow this SKILL.md's current output and visualization rules.

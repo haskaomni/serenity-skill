@@ -169,11 +169,29 @@ This avoids misclassifying a turnaround as a normal growth stock.
 | Option-like | PE/PEG distorted, large TAM, early execution | Small exposure, accept binary outcomes |
 | Cyclical | Low PEG but discounted Quality Factor | Trade supply/demand cycle, avoid linear extrapolation |
 
+## Mermaid Visualizations
+
+For a full report, include 2-4 Mermaid diagrams when they materially improve comprehension. A short answer or data-limited analysis may use fewer. Do not create a diagram merely to meet a quota.
+
+Prioritize these views:
+
+1. A `flowchart` showing how EPS CAGR, TAM Runway Factor, and Quality Factor produce adjusted growth and TAM-Adj-PEG.
+2. A `quadrantChart` comparing runway and quality for the company and peers only when at least three entities use comparable evidence and scales; retain the comparison table.
+3. An `xychart-beta` comparing raw EPS growth with adjusted growth, or base and turnaround-success valuation outputs, only when the values share a clear unit.
+
+Apply these rules to every diagram:
+
+- Use fenced `mermaid` blocks, match the report language, keep node IDs in simple ASCII, and keep labels short.
+- Prefer broadly supported `flowchart`, `pie`, and `stateDiagram` syntax. Use `xychart-beta`, `quadrantChart`, or `timeline` only as progressive enhancement and retain the adjacent Markdown table as the fallback.
+- Use only evidence and values already stated in the report. Keep percentages, factor scales, valuation units, and scenario labels consistent with the surrounding tables; never fill missing data for visual completeness.
+- Place each diagram beside the analysis it explains and follow it with a one-sentence takeaway. Keep citations, URLs, dates, and detailed caveats outside the diagram.
+- Keep a diagram focused: normally no more than 12 nodes or 8 plotted values. Diagrams supplement rather than replace formulas, assumptions, risk adjustments, and source trails.
+
 ## Output Format
 
 Use this structure for every ticker:
 
-```text
+```markdown
 # TICKER: TAM-Adj-PEG 估值分析
 
 公司：XXX
@@ -208,6 +226,10 @@ TAM-Adj-PEG = Forward PE / (EPS CAGR x TAM Runway Factor x Quality Factor)
 - 修正后增长率：
 - TAM-Adj-PEG：
 
+加入 Mermaid flowchart 展示三个输入如何传导到修正后增长率和最终估值；保留完整公式与计算。
+
+如有可比公司或双情景的同口径数据，可加入 runway—quality 矩阵或增长对比 xychart，并保留数据表。
+
 6. 结论
 - 估值档位：
 - 主要上行驱动：
@@ -218,3 +240,5 @@ TAM-Adj-PEG = Forward PE / (EPS CAGR x TAM Runway Factor x Quality Factor)
 ## Detailed Reference
 
 Read `references/original-framework.md` when a task needs the full Chinese framework text, all scoring tables, or the original explanation of TAM-Adj-PEG logic.
+
+When the reference format differs, preserve its analytical intent but follow this SKILL.md's current output and visualization rules.

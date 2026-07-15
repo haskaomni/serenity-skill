@@ -1,4 +1,4 @@
 interface:
   display_name: "Bayesian Intrinsic Growth Valuation"
   short_description: "Estimate intrinsic growth versus market-implied growth"
-  default_prompt: "Use $bayesian-intrinsic-growth-valuation to analyze this company with Bayesian growth hypotheses, implied growth, FOMO, valuation state, risks, and verification metrics."
+  default_prompt: "Use $bayesian-intrinsic-growth-valuation to analyze this company with Bayesian growth hypotheses, implied growth, FOMO, valuation state, risks, verification metrics, and 2-4 adaptive Mermaid visualizations."

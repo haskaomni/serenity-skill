@@ -166,6 +166,24 @@ Define the time window and concrete indicators that will validate or falsify the
 - peer/customer/supplier corroboration
 - analyst revision breadth and narrative crowding
 
+## Mermaid Visualizations
+
+For a full report, include 2-4 Mermaid diagrams when they materially improve comprehension. A short answer or data-limited analysis may use fewer. Do not create a diagram merely to meet a quota.
+
+Prioritize these views:
+
+1. A `pie` chart of the H0-H5 posterior probabilities after confirming they match the probability table and sum to roughly 100%.
+2. A `flowchart` showing prior, new evidence, likelihood interpretation, posterior, implied growth, and valuation state.
+3. An `xychart-beta` comparison of weighted intrinsic growth versus market-implied growth, or price/multiple change versus the intrinsic-growth update, only when the values and units are genuinely comparable.
+
+Apply these rules to every diagram:
+
+- Use fenced `mermaid` blocks, match the report language, keep node IDs in simple ASCII, and keep labels short.
+- Prefer broadly supported `flowchart`, `pie`, and `stateDiagram` syntax. Use `xychart-beta`, `quadrantChart`, or `timeline` only as progressive enhancement and retain the adjacent Markdown table as the fallback.
+- Use only evidence and values already stated in the report. Keep names, numbers, units, and probability totals consistent with the surrounding tables; never fill missing data for visual completeness.
+- Place each diagram beside the analysis it explains and follow it with a one-sentence takeaway. Keep citations, URLs, dates, and detailed caveats outside the diagram.
+- Keep a diagram focused: normally no more than 12 nodes or 8 plotted values. Diagrams supplement rather than replace the probability table, assumptions, uncertainty, and source trail.
+
 ## Output Template
 
 Use this format for company analysis:
@@ -184,6 +202,8 @@ Use this format for company analysis:
 | H4 结构性爆发 | 25%-50% |  |  |  |
 | H5 平台级扩张 | >50% |  |  |  |
 
+紧接概率表加入 posterior 概率 Mermaid pie；图中数值必须与表格一致。
+
 ## 3. 加权内在增长速度
 给出未来 3-5 年收入 CAGR 的加权区间和关键假设。
 
@@ -194,8 +214,12 @@ Use this format for company analysis:
 比较 1M/3M/6M/12M 股价、相对行业/指数表现、市值和估值倍数变化，与收入增速、指引、订单、利润率和 posterior 增长概率变化是否匹配。
 给出结论：股价落后基本面 / 股价基本匹配基本面 / 股价领先基本面 / 严重背离且 FOMO 风险上升。
 
+数据同口径时，可加入内在增长、隐含增长与价格/倍数变化的 Mermaid xychart，并保留原始数据表。
+
 ## 6. 新信息的贝叶斯更新
 说明信息影响的变量、在各增长假设下的相容性，以及 posterior 变化。
+
+加入先验→证据→似然解释→后验→估值判断的 Mermaid flowchart。
 
 ## 7. 估值状态
 在 低估 / 合理 / 高估但可交易 / 泡沫化 中选择一个，并解释为什么。
@@ -232,3 +256,5 @@ Use this format for company analysis:
 ## Source Reference
 
 The original Chinese framework is stored in `references/original-framework.md`. Read it when you need to preserve the exact wording or rebuild the model structure.
+
+When the reference format differs, preserve its analytical intent but follow this SKILL.md's current output and visualization rules.

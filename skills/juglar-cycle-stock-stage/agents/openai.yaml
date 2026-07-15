@@ -1,0 +1,4 @@
+interface:
+  display_name: "Juglar Cycle Stock Stage"
+  short_description: "Classify stocks by Juglar cycle phase"
+  default_prompt: "Use $juglar-cycle-stock-stage to classify a ticker across Juglar cycle phases with probabilities, evidence, risks, migration signals, and 2-4 adaptive Mermaid visualizations."

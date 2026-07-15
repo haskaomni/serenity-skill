@@ -9,6 +9,7 @@ Codex skills for translating market information into testable investment researc
 - `gf-dma-health-index`: scores whether a stock's current valuation/trend health is supported by fundamental growth speed, DMA trend speed, divergence, escape ratio, and estimate revisions.
 - `tam-adj-peg`: evaluates growth-stock valuation by adjusting traditional PEG with TAM runway and business quality.
 - `buy-side-equity-research-memo`: generates source-backed buy-side equity research memos from a ticker, with investment view, SEC/IR-backed financial analysis, valuation scenarios, catalysts, risks, and Serenity framework cross-checks.
+- `juglar-cycle-stock-stage`: classifies a stock and its core industry across Juglar fixed-asset investment cycle stages with probabilities, evidence, counter-evidence, migration signals, and investment implications.
 
 ## 直接使用托管版
 
@@ -36,13 +37,27 @@ skills/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml
 │   └── references/original-framework.md
-└── buy-side-equity-research-memo/
+├── buy-side-equity-research-memo/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/original-framework.md
+└── juglar-cycle-stock-stage/
     ├── SKILL.md
     ├── agents/openai.yaml
     └── references/original-framework.md
 ```
 
 Each subdirectory under `skills/` is an independent Codex skill. Codex discovers a skill from its `SKILL.md`; files under `references/` are supporting material loaded only when needed.
+
+## Mermaid Visualizations
+
+All six skills use adaptive Mermaid visualization in full reports. The default target is 2-4 decision-useful diagrams, selected for the framework rather than repeated mechanically. Short answers and reports with incomplete data may use fewer diagrams.
+
+- Stable relationship views use `flowchart`, `pie`, or `stateDiagram` where possible.
+- Numerical comparisons may use `xychart-beta`; matrices and catalyst views may use `quadrantChart` or `timeline` as progressive enhancement.
+- Enhanced diagrams always keep the adjacent Markdown table, so the analysis remains complete when a renderer does not support that Mermaid type.
+- Diagrams use only values already present in the report, remain consistent with the tables, and never replace citations, assumptions, risks, or falsification conditions.
+- Each diagram is placed beside the section it explains and followed by a concise analytical takeaway.
 
 ## Install
 
@@ -62,9 +77,10 @@ cp -R skills/bayesian-intrinsic-growth-valuation "${CODEX_HOME:-$HOME/.codex}/sk
 cp -R skills/gf-dma-health-index "${CODEX_HOME:-$HOME/.codex}/skills/"
 cp -R skills/tam-adj-peg "${CODEX_HOME:-$HOME/.codex}/skills/"
 cp -R skills/buy-side-equity-research-memo "${CODEX_HOME:-$HOME/.codex}/skills/"
+cp -R skills/juglar-cycle-stock-stage "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
 
-Then invoke `$serenity-alpha` for news-to-alpha analysis, `$bayesian-intrinsic-growth-valuation` for Bayesian intrinsic-growth valuation, `$gf-dma-health-index` for trend/valuation health scoring, `$tam-adj-peg` for TAM-adjusted PEG valuation, or `$buy-side-equity-research-memo` for a full buy-side stock memo. If a newly copied skill does not appear, restart Codex.
+Then invoke `$serenity-alpha` for news-to-alpha analysis, `$bayesian-intrinsic-growth-valuation` for Bayesian intrinsic-growth valuation, `$gf-dma-health-index` for trend/valuation health scoring, `$tam-adj-peg` for TAM-adjusted PEG valuation, `$buy-side-equity-research-memo` for a full buy-side stock memo, or `$juglar-cycle-stock-stage` for Juglar fixed-asset cycle stage classification. If a newly copied skill does not appear, restart Codex.
 
 ## What They Do
 
@@ -95,6 +111,14 @@ Then invoke `$serenity-alpha` for news-to-alpha analysis, `$bayesian-intrinsic-g
 - Adjusts traditional PEG with TAM Runway Factor and Quality Factor.
 - Separates growth speed from growth duration, TAM capture, pricing power, cyclicality, dilution, and execution risk.
 - Classifies valuation from very cheap to very expensive and maps it to core, high-beta, turnaround, option-like, or cyclical position framing.
+
+`juglar-cycle-stock-stage`:
+
+- Maps a ticker to its core fixed-asset investment cycle, such as semiconductors, memory, AI data centers, power equipment, industrial automation, property-chain, engineering machinery, chemicals, shipping, or optical communications.
+- Scores demand, ASP, margins, capex, inventory, capacity release, customer behavior, and capital-market reaction from -2 to +2.
+- Outputs probabilities across Stage 1 recovery, Stage 2 expansion, Stage 3 overheating, Stage 4 downturn, and Stage 5 clearing.
+- Separates industry cycle stage, company operating position, and stock valuation stage.
+- Lists core evidence, counter-evidence, migration signals, investment implications, and strategy framing.
 
 `buy-side-equity-research-memo`:
 

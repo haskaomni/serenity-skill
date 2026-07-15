@@ -1,4 +1,4 @@
 interface:
   display_name: "Buy-Side Equity Research Memo"
   short_description: "Generate source-backed buy-side stock memos"
-  default_prompt: "Use $buy-side-equity-research-memo to analyze this ticker with an investment view, SEC-backed financials, valuation scenarios, catalysts, risks, and Serenity framework cross-checks."
+  default_prompt: "Use $buy-side-equity-research-memo to analyze this ticker with an investment view, SEC-backed financials, valuation scenarios, catalysts, risks, Serenity cross-checks, and 2-4 adaptive Mermaid visualizations."

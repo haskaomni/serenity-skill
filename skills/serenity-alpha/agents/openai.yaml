@@ -1,4 +1,4 @@
 interface:
   display_name: "Serenity Alpha"
   short_description: "Translate news into alpha hypotheses"
-  default_prompt: "Use $serenity-alpha to analyze this news for demand changes, financial transmission, small-cap elasticity, validation signals, and position sizing."
+  default_prompt: "Use $serenity-alpha to analyze this news for demand changes, financial transmission, small-cap elasticity, validation signals, position sizing, and 2-4 adaptive Mermaid visualizations."

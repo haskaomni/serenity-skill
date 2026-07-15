@@ -233,11 +233,29 @@ Final interpretation:
 | 40-55 | High Risk | Risk clearly rising |
 | <40 | Broken / Escaping | Broken trend or post-escape pullback |
 
+## Mermaid Visualizations
+
+For a full report, include 2-4 Mermaid diagrams when they materially improve comprehension. A short answer or data-limited analysis may use fewer. Do not create a diagram merely to meet a quota.
+
+Prioritize these views:
+
+1. An `xychart-beta` comparing latest price with 20/50/100/200DMA values, with the source values preserved in the adjacent table.
+2. An `xychart-beta` of the four 0-100 module scores, clearly separated from their percentage weights.
+3. A compact `flowchart` explaining why a below-DMA state is a healthy pullback or a breakdown, using fundamental speed and revision confirmation as the gate.
+
+Apply these rules to every diagram:
+
+- Use fenced `mermaid` blocks, match the report language, keep node IDs in simple ASCII, and keep labels short.
+- Prefer broadly supported `flowchart`, `pie`, and `stateDiagram` syntax. Use `xychart-beta`, `quadrantChart`, or `timeline` only as progressive enhancement and retain the adjacent Markdown table as the fallback.
+- Use only evidence and values already stated in the report. Keep price currency, periods, scores, weights, and units consistent with the surrounding tables; never fill missing data for visual completeness.
+- Place each diagram beside the analysis it explains and follow it with a one-sentence takeaway. Keep citations, URLs, dates, and detailed caveats outside the diagram.
+- Keep a diagram focused: normally no more than 12 nodes or 8 plotted values. Diagrams supplement rather than replace calculations, score tables, caveats, and source trails.
+
 ## Output Format
 
 Use this structure for every ticker:
 
-```text
+```markdown
 # TICKER: GF-DMA Health Index 评分
 
 最终评分：XX / 100
@@ -261,6 +279,8 @@ Use this structure for every ticker:
 | 50DMA | | | |
 | 100DMA | | | |
 | 200DMA | | | |
+
+若价格和四条均线数据完整，在表后加入 Mermaid xychart；表格继续作为数值和兼容性回退。
 
 3. 股价-均线背离
 | 指标 | 当前背离 | 判断 |
@@ -287,10 +307,16 @@ Use this structure for every ticker:
 | 趋势平行度 | 20% | |
 | 预期上修确认 | 15% | |
 
+在表后加入四个模块分数的 Mermaid xychart，不要把模块分数与模块权重混画在同一坐标轴。
+
 结论：
 ...
+
+当价格位于关键均线下方时，可加入 Mermaid flowchart，展示健康回撤与趋势破坏的判断门槛。
 ```
 
 ## Detailed Reference
 
 Read `references/original-framework.md` when a task needs the full Chinese framework text, examples, source priority list, or scoring tables in their original form.
+
+When the reference format differs, preserve its analytical intent but follow this SKILL.md's current output and visualization rules.

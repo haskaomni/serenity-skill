@@ -156,6 +156,24 @@ Frame position posture as conditional research guidance, not a personalized reco
 | Thesis becomes consensus and valuation stretches | lower return expectations / trade only |
 | Key assumptions are falsified | exit or remove from watchlist |
 
+## Mermaid Visualizations
+
+For a full report, include 2-4 Mermaid diagrams when they materially improve comprehension. A short answer or data-limited analysis may use fewer. Do not create a diagram merely to meet a quota.
+
+Prioritize these views:
+
+1. A `flowchart` from news to observed demand, financial-statement lines, beneficiaries, and the decisive validation condition.
+2. A candidate map comparing evidence strength with financial elasticity when at least three candidates have comparable inputs; use `quadrantChart` only with a nearby comparison table.
+3. A 1-4 quarter verification path showing confirm, weaken, and falsify branches.
+
+Apply these rules to every diagram:
+
+- Use fenced `mermaid` blocks, match the report language, keep node IDs in simple ASCII, and keep labels short.
+- Prefer broadly supported `flowchart`, `pie`, and `stateDiagram` syntax. Use `xychart-beta`, `quadrantChart`, or `timeline` only as progressive enhancement and retain the adjacent Markdown table as the fallback.
+- Use only evidence and values already stated in the report. Keep names, numbers, units, and probability totals consistent with the surrounding tables; never fill missing data for visual completeness.
+- Place each diagram beside the analysis it explains and follow it with a one-sentence takeaway. Keep citations, URLs, dates, and detailed caveats outside the diagram.
+- Keep a diagram focused: normally no more than 12 nodes or 8 plotted values. Diagrams supplement rather than replace the written transmission logic, risks, and source trail.
+
 ## Output Template
 
 When analyzing a news item, use this structure:
@@ -173,17 +191,23 @@ When analyzing a news item, use this structure:
 ## C. 财务翻译
 把需求映射到收入项、成本项、利润项、现金流或资产负债表项目。
 
+在这里或下一节加入需求传导 Mermaid flowchart，展示新闻如何进入财务报表并最终影响候选公司。
+
 ## D. 受益链条
 列出一阶、二阶、三阶受益者，并说明传导距离。
 
 ## E. 小市值高弹性标的
 列出可能的小盘/高纯度/低关注候选；标注需要核实的市值、收入基数和业务占比。
 
+如果至少三个候选具有可比数据，可加入证据强度—财务弹性矩阵，并保留候选比较表。
+
 ## F. 市场误分类
 说明市场现在把公司当什么，它可能正在变成什么。
 
 ## G. 验证指标
 列出未来 1-4 个季度要看的财报、电话会、供应链和价格指标。
+
+加入验证路径图，明确确认、削弱和证伪分支。
 
 ## H. 下行风险
 列出需求、传导、竞争、估值、时点和流动性风险。
@@ -202,3 +226,5 @@ When analyzing a news item, use this structure:
 - Distinguish first-order beneficiaries from distant second- or third-order stories.
 - Use current sourced data for market caps, financials, prices, and recent filings.
 - State uncertainty and falsification conditions clearly.
+
+When `references/original-framework.md` is consulted, preserve its analytical intent but follow this SKILL.md's current output and visualization rules when the formats differ.
